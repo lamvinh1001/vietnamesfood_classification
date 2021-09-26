@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 from cv2 import cv2
 from keras.models import load_model
 import numpy as np
-model = load_model('model_FTVGG16.h5')
-print('Loading model_FTVGG16 model')
+model = load_model('fine_tune_model_best.hdf5')
+# print('Loading model_FTVGG16 model')
 
 class_names = ['Banh_Chung', 'Banh_Mi', 'Banh_Pia', 'Banh_Trang_Nuong',
                'Banh_Xeo', 'Bun_Dau_Mam_Tom', 'Ca_Kho', 'Chao_Long', 'Com_Tam', 'Pho']
@@ -39,4 +39,5 @@ def after():
 
 
 if __name__ == "__main__":
+    # app.run(host="0.0.0.0", port=8080)
     app.run(debug=True)
