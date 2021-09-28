@@ -20,19 +20,19 @@ def index():
 @app.route('/after', methods=['GET', 'POST'])
 def after():
 
-    global model, class_names, model_vgg16
+    global model, class_names
 
     img = request.files['file_image']
     img.save('static/image/file.jpg')
     image = cv2.imread('static/image/file.jpg')
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    image = cv2.resize(image, (150, 150))
+    image = cv2.resize(image, (224, 224))
     image = image / 255.0
-    image = np.reshape(image, (1, 150, 150, 3))
+    image = np.reshape(image, (1, 224, 224, 3))
     prediction = model.predict(image)
     pred_labels = np.argmax(prediction, axis=1)
-    prediction = [round(float(prediction[0][i]), 3)
+    prediction = [round(float(prediction[0][i])*100, 3)
                   for i in range(len(class_names))]
     final = class_names[int(pred_labels)]
     return render_template('index.html', data=final.replace('_', ' '), class_names=enumerate(class_names), percents=prediction)
