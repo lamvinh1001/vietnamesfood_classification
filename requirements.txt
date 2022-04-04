@@ -3,4 +3,4 @@ Flask==1.1.2
 gunicorn
 opencv-python-headless
 Keras==2.4.3
-tensorflow
+tensorflow==2.3.0

@@ -15,11 +15,11 @@
                         onchange="onChangeRadio(this)">
                     <label class="form-check-label" for="radio_file">File image</label>
                 </div>
-                <div id="radio_link" class="form-check form-check-inline">
+                <!-- <div id="radio_link" class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="radio" value="link"
                         onchange="onChangeRadio(this)">
                     <label class="form-check-label" for="radio_link">Link image</label>
-                </div>
+                </div> -->
             </div>
             <form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>
                 <div id="image_link" class="display">
@@ -50,7 +50,7 @@
                                 <table class="table table-borderless" style="width: 100%;">
                                     <thead>
                                         <tr>
-                                            <th class="text-center" scope="col">Confidence</th>
+                                            <th class="text-center" scope="col">Accuracy</th>
                                             <th class="text-center" scope="col">Class Name</th>
                                         </tr>
                                     </thead>
