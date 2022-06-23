@@ -20,8 +20,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
 # now = datetime.now()
 # dt_string = str(now.strftime("%d/%m/%Y %H:%M:%S"))
-# ACCESS_KEY_ID = 'AKIAZTKA3HOVTTBP23MS'
-# ACCESS_SECRET_KEY = '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'
+
 # s3 = boto3.client('s3',
 #                   aws_access_key_id=ACCESS_KEY_ID,
 #                   aws_secret_access_key=ACCESS_SECRET_KEY)
